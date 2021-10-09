@@ -25,3 +25,7 @@ Route::prefix('movie')->group(function () {
         Route::get('/edit', [MovieController::class, 'edit'])->name('edit');
     });
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
