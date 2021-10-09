@@ -19,3 +19,5 @@ Route::view('/welcome', 'welcome');
 Route::view('/home', 'home.index')->name('home.index');
 
 Route::get('/movie', [MovieController::class, 'index'])->name('movie.index');
+Route::get('/movie/create', [MovieController::class, 'create'])->name('movie.create');
+Route::get('/movie/edit', [MovieController::class, 'edit'])->name('movie.edit');
