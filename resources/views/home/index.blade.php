@@ -1,2 +1,2 @@
 <h1>ホーム</h1>
-<a href="#">ユーザー管理画面</a>
+<a href="{{ route('home.index') }}">映画一覧画面</a>
