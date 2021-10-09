@@ -18,6 +18,10 @@ Route::view('/welcome', 'welcome');
 
 Route::view('/home', 'home.index')->name('home.index');
 
-Route::get('/movie', [MovieController::class, 'index'])->name('movie.index');
-Route::get('/movie/create', [MovieController::class, 'create'])->name('movie.create');
-Route::get('/movie/edit', [MovieController::class, 'edit'])->name('movie.edit');
+Route::prefix('movie')->group(function () {
+    Route::name('movie.')->group(function () {
+        Route::get('/', [MovieController::class, 'index'])->name('index');
+        Route::get('/create', [MovieController::class, 'create'])->name('create');
+        Route::get('/edit', [MovieController::class, 'edit'])->name('edit');
+    });
+});
